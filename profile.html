@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive personal portfolio website design tutorail</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <div class="user">
+        
+        <h3 class="name">LOGESH</h3>
+        <p class="post"></p>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">about</a></li>
+            <li><a href="#about" onclick="my()">logout</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<div id="menu" class="fas fa-bars"></div>
+
+
+
+<section style="background-image:url(https://undsgn.com/wp-content/uploads/2018/04/ltotbngnzzu.jpg);";    class="about" id="about">
+<h1 class="heading"> <span>about</span> me </h1>
+
+<div class="row">
+
+    <div class="info">
+        <h3> <span> name : </span>logesh</h3>
+        <h3> <span> email address : </span>logesh@gmail.com</h3>
+        <h3> <span> DOB:</span>06/12/2002</h3>
+        <h3> <span> Age:</span>20</h3>
+        <h3> <span> Gender:</span>male</h3>
+
+
+
+</div>
+
+</section>
+
+<!-- jquery cdn link  -->
+<script>$(document).ready(function(){
+
+    $('#menu').click(function(){
+      $(this).toggleClass('fa-times');
+      $('header').toggleClass('toggle');
+    });
+  
+    $(window).on('scroll load',function(){
+  
+      $('#menu').removeClass('fa-times');
+      $('header').removeClass('toggle');
+  
+      if($(window).scrollTop() > 0){
+        $('.top').show();
+      }else{
+        $('.top').hide();
+      }
+  
+    });
+  
+    // smooth scrolling 
+  
+    $('a[href*="#"]').on('click',function(e){
+  
+      e.preventDefault();
+  
+      $('html, body').animate({
+  
+        scrollTop : $($(this).attr('href')).offset().top,
+  
+      },
+        500, 
+        'linear'
+      );
+  
+    });
+  
+  });</script>
+
+<!-- custom js file link  -->
+<script>
+    function my() {
+        window.location.href = "website.html";
+    }
+</script>
+
+
+</body>
+</html>
